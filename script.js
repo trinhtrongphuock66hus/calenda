@@ -6,6 +6,25 @@ let currentYear = 0;
 let monthOffset = 0;
 let yearOffset = 0;
 
+// Danh sách các ngày cần bôi màu (định dạng: "YYYY-MM-DD")
+const highlightedDates = [
+    "2023-07-20",
+    "2023-07-21",
+    "2023-07-22",
+    "2023-07-23",
+    "2023-07-24",
+    "2023-07-25",
+    "2023-07-26",
+    "2023-07-27",
+    "2023-07-29",
+    "2023-07-31",
+    "2023-08-01",
+  ];
+  const highlighted = [
+    "2023-07-30"
+
+  ];
+
 // Hàm kiểm tra năm nhuận
 function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
@@ -81,6 +100,17 @@ function createCalendar() {
                 if (year === today.getFullYear() && month === today.getMonth() && date === today.getDate()) {
                     cell.classList.add("today");
                 }
+
+                // Kiểm tra xem ngày hiện tại có nằm trong danh sách các ngày cần bôi màu không
+                const formattedDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+                if (highlightedDates.includes(formattedDate)) {
+                    cell.classList.add("highlighted");
+                }
+                const formatted = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+                if (highlighted.includes(formatted)) {
+                    cell.classList.add("highligh");
+                }
+
                 row.appendChild(cell);
                 date++;
             }

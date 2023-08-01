@@ -64,6 +64,16 @@ body {
     color: #f5b971;
     border: 1px solid #f5b971;
   }*/
-  /* Định dạng cho các ô thời gian (Sáng, Chiều) */
+/* Định dạng cho các ô được bôi màu */
+.highlighted {
+  background-color: #9aff9a; /* Màu cam nhạt cho ngày được bôi màu */
+  color: #fff; /* Màu chữ trắng cho ngày được bôi màu */
+  font-weight: bold;
+}
+.highligh {
+  background-color: #90fbff; /* Màu cam nhạt cho ngày được bôi màu */
+  color: #fff; /* Màu chữ trắng cho ngày được bôi màu */
+  font-weight: bold;
+}
 
   
