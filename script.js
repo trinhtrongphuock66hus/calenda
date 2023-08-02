@@ -22,7 +22,7 @@ const highlightedDates = [
     "2023-08-02",
   ];
   const highlighted = [
-    "2023-07-30"
+    "2023-07-30",
 
   ];
 
