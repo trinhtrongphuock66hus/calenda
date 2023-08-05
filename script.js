@@ -4,7 +4,6 @@ let currentYear = 0;
 
 // Biến toàn cục để theo dõi số lượng tháng được giảm đi
 let monthOffset = 0;
-let yearOffset = 0;
 
 // Danh sách các ngày cần bôi màu (định dạng: "YYYY-MM-DD")
 const highlightedDates = [
@@ -20,6 +19,7 @@ const highlightedDates = [
     "2023-07-31",
     "2023-08-01",
     "2023-08-02",
+    "2023-08-04",
   ];
   const highlighted = [
     "2023-07-30",
@@ -35,7 +35,7 @@ function isLeapYear(year) {
 function createCalendar() {
     const calendarContainer = document.getElementById("calendar");
     const today = new Date();
-    let year = today.getFullYear() ;
+    let year = today.getFullYear() + Math.floor((monthOffset+today.getMonth()) / 12);
     let month = (today.getMonth() + monthOffset) % 12;
 
     // Kiểm tra nếu tháng hoặc năm bị quay lại năm hoặc năm tiếp theo
@@ -96,11 +96,23 @@ function createCalendar() {
             } else if (date > daysInMonth[month]) {
                 break;
             } else {
+                /*// Tính toán lịch âm
+                const lunarDate = getLunarDate(year, month + 1, date);*/
+
+                // Tạo ô cho lịch dương
                 const cell = document.createElement("td");
                 cell.textContent = date;
                 if (year === today.getFullYear() && month === today.getMonth() && date === today.getDate()) {
                     cell.classList.add("today");
                 }
+
+                /*// Tạo ô cho lịch âm
+                const lunarCell = document.createElement("div");
+                lunarCell.classList.add("lunar-date");
+                lunarCell.textContent = lunarDate.day + "/" + lunarDate.month/* + " " + lunarDate.year*/;
+
+                // Bổ sung ô của lịch âm vào ô của lịch dương
+                //cell.appendChild(lunarCell);
 
                 // Kiểm tra xem ngày hiện tại có nằm trong danh sách các ngày cần bôi màu không
                 const formattedDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
@@ -111,10 +123,11 @@ function createCalendar() {
                 if (highlighted.includes(formatted)) {
                     cell.classList.add("highligh");
                 }
-
+                
                 row.appendChild(cell);
                 date++;
             }
+            
         }
         tbody.appendChild(row);
     }
