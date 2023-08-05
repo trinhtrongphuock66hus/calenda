@@ -75,8 +75,13 @@ body {
   color: #fff; /* Màu chữ trắng cho ngày được bôi màu */
   font-weight: bold;
 }
+
 .lunar-date {
   font-size: 12px;
   color: #999;
   margin-top: 5px;
+}
+.highlighlunar {
+  color: #ff0000;
+  font-weight: bold;
 }
