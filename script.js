@@ -20,13 +20,22 @@
         "2023-08-01",
         "2023-08-02",
         "2023-08-04",
+        "2023-08-05",
+        "2023-08-06",
     ];
     const highlighted = [
         "2023-07-30",
 
     ];
     const highlightedlunar = [
-        "07-05",
+        "07-02",
+        "07-04",
+        "10-01",
+
+    ];
+    const highlightedluong = [
+        "2023-08-07",
+        "2023-09-05",
 
     ];
 
@@ -272,6 +281,13 @@
                     const lunarFormatted = `${String(lunarDate[1]).padStart(2, '0')}-${String(lunarDate[0]).padStart(2, '0')}`;
                     if (isFirstDay || isFullMoon || highlightedlunar.includes(lunarFormatted)) {
                         lunarCell.classList.add("highlighlunar");
+                    }
+                    if ( highlightedlunar.includes(lunarFormatted) ) {
+                        lunarCell.classList.add("highlighgio");
+                        lunarCell.textContent = lunarDate[0] + "/" + lunarDate[1] + "(Giỗ)";
+                    }
+                    if ( highlightedluong.includes(formatted) ) {
+                        cell.classList.add("highlighluong");
                     }
                     row.appendChild(cell);
                     date++;
