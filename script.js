@@ -199,10 +199,8 @@
         // Kiểm tra nếu tháng hoặc năm bị quay lại năm hoặc năm tiếp theo
         if (month < 0) {
             month += 12;
-            year--;
         } else if (month > 11) {
             month -= 12;
-            year++;
         }
 
         const months = [
