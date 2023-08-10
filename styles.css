@@ -32,12 +32,6 @@ body {
     border: 1px solid #ccc;
   }
   
-  tbody td.today {
-    background-color: #f5b971; /* Màu cam nhạt cho ngày hôm nay */
-    color: #fff; /* Màu chữ trắng cho ngày hôm nay */
-    font-weight: bold;
-  }
-  
   button {
     background-color: #f5b971; /* Màu cam nhạt cho nút */
     color: #fff; /* Màu chữ trắng cho nút */
@@ -91,5 +85,10 @@ body {
 }
 .highlighluong {
   color: #03ff57;
+  font-weight: bold;
+}
+tbody td.today {
+  /*background-color: #f5b971; /* Màu cam nhạt cho ngày hôm nay */
+  color: #8f4f00; /* Màu chữ trắng cho ngày hôm nay */
   font-weight: bold;
 }
