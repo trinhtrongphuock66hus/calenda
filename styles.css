@@ -88,7 +88,7 @@ body {
   font-weight: bold;
 }
 tbody td.today {
-  /*background-color: #f5b971; /* Màu cam nhạt cho ngày hôm nay */
-  color: #8f4f00; /* Màu chữ trắng cho ngày hôm nay */
+  background-color: rgb(12, 1, 61); /* Màu cam nhạt cho ngày hôm nay */
+  color: #ffffff; /* Màu chữ trắng cho ngày hôm nay */
   font-weight: bold;
 }
